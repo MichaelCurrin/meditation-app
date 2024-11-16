@@ -1,28 +1,39 @@
+"""
+Meditation app.
+"""
+
 import os
+from typing import Union
 
 import pyttsx3
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from pydantic.types import SecretStr
 
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "")  # e.g. 'gpt-4o'
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "local")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "http://localhost:1234/v1")
 
+# From langchain_core.messages.BaseMessage
+Content = Union[str, list[Union[str, dict]]]
 
-def generate(model, user_input):
+
+def generate(model: ChatOpenAI, user_input: str) -> Content:
     prompt_template = PromptTemplate.from_template(
         "Create a calming meditation experience to guide the user through a calm and detailed scene. If it is a story, describe what happens in the story, if not a story then describe observations from the user perspective. Use the following input: {input}"
     )
     prompt = prompt_template.format(input=user_input)
     result = model.invoke(prompt)
+
     return result.content
 
 
-def main():
+def main() -> None:
+    """Main command-line entry-point."""
     model = ChatOpenAI(
         model=OPENAI_MODEL,
         base_url=OPENAI_API_URL,
-        api_key=OPENAI_API_URL,
+        api_key=SecretStr(OPENAI_API_URL),
         max_tokens=100,
     )
     engine = pyttsx3.init()
