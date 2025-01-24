@@ -1,6 +1,8 @@
+SHELL = /bin/bash
+
 install:
 	poetry install
 
-fix:
-	black .
-	isort .
+fmt:
+	poetry run black .
+	poetry run isort .
