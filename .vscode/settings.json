@@ -1,6 +1,7 @@
 {
-  "python.defaultInterpreterPath": "venv/bin/python",
-  "editor.rulers": [79],
-  "pylint.enabled": false,
-  "flake8.enabled": false
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "editor.rulers": [
+    79
+  ],
+  "pylint.enabled": false
 }
