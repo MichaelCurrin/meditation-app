@@ -1,8 +1,9 @@
 [tool.poetry]
+package-mode = false
 name = "meditation-app"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Michael Currin <18750745+MichaelCurrin@users.noreply.github.com>"]
 license = "MIT"
 readme = "README.md"
 
@@ -11,7 +12,6 @@ python = "^3.12"
 langchain-openai = "^0.2.8"
 langchain-core = "^0.3.19"
 pyttsx3 = "^2.98"
-
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
