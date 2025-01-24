@@ -10,6 +10,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from pydantic.types import SecretStr
 
+
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "dummy")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "http://localhost:1234/v1")
