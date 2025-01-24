@@ -12,8 +12,8 @@ from pydantic.types import SecretStr
 
 
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "dummy")
-OPENAI_API_URL = os.getenv("OPENAI_API_URL", "http://localhost:1234/v1")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_API_URL = os.getenv("OPENAI_API_URL", "")
 
 # Copied from `langchain_core.messages.BaseMessage`.
 Content = Union[str, list[Union[str, dict]]]
