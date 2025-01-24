@@ -20,6 +20,12 @@ Content = Union[str, list[Union[str, dict]]]
 
 
 def generate(model: ChatOpenAI, user_input: str) -> Content:
+    """
+    Send prompt to LLM and return result.
+
+    TODO: System prompt.
+    TODO: Chain conversation.
+    """
     prompt_template = PromptTemplate.from_template(
         "Create a calming meditation experience to guide the user through a calm and detailed scene. If it is a story, describe what happens in the story, if not a story then describe observations from the user perspective. Use the following input: {input}"
     )
@@ -27,6 +33,18 @@ def generate(model: ChatOpenAI, user_input: str) -> Content:
     result = model.invoke(prompt)
 
     return result.content
+
+
+def start_loop(model: ChatOpenAI, engine: pyttsx3.Engine):
+    while True:
+        # e.g. I walk through a misty forest on a mountain in the evening
+        user_input = input("> ")
+        if not user_input:
+            break
+
+        llm_result = generate(model, user_input)
+        engine.say(llm_result)
+        engine.runAndWait()
 
 
 def main() -> None:
@@ -38,13 +56,9 @@ def main() -> None:
         max_tokens=100,
     )
     engine = pyttsx3.init()
-    engine.setProperty("rate", 150)
+    engine.setProperty("rate", 140)
 
-    result = generate(
-        model, "I walk through a misty forest on a mountain in the evening"
-    )
-    engine.say(result)
-    engine.runAndWait()
+    start_loop(model, engine)
 
 
 if __name__ == "__main__":
