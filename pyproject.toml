@@ -1,7 +1,7 @@
 [tool.poetry]
 package-mode = false
 name = "meditation-app"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["Michael Currin <18750745+MichaelCurrin@users.noreply.github.com>"]
 license = "MIT"
