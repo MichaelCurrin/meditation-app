@@ -1,13 +1,15 @@
-
-Set System prompt.
-Chain conversation.
-
-Allow configuration from config file or CLI or choosing from styles of prompts.
-Read audio to text?
+LangChain
+  Set System prompt.
+  Chain conversation.
 
 Replace with more realistic audio.
-allow skipping current line being read out
-
-Add music and images
 
 Compare against my saved prompt
+
+Consider speech handled in browser with JS instead.
+
+Features
+  Add music and images
+  Allow configuration from config file or CLI or choosing from styles of prompts.
+  Read audio to text?
+  Allow skipping current line being read out
