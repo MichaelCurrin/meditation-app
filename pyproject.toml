@@ -9,8 +9,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-langchain-openai = "^0.2.8"
-langchain-core = "^0.3.19"
+langchain-openai = "^0.3.16"
+langchain-core = "^0.3.58"
 pyttsx3 = "^2.98"
 
 [tool.poetry.group.dev.dependencies]
