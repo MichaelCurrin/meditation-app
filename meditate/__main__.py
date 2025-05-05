@@ -15,6 +15,8 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_API_URL = os.getenv("OPENAI_API_URL", "")
 
+EXIT_TERMS = {"", "q", "Q", "exit"}
+
 # Copied from `langchain_core.messages.BaseMessage`.
 Content = Union[str, list[Union[str, dict]]]
 
@@ -22,7 +24,6 @@ Content = Union[str, list[Union[str, dict]]]
 def generate(model: ChatOpenAI, user_input: str) -> Content:
     """
     Send prompt to LLM and return result.
-
     """
     prompt_template = PromptTemplate.from_template(
         "Create a calming meditation experience to guide the user through a"
@@ -37,12 +38,24 @@ def generate(model: ChatOpenAI, user_input: str) -> Content:
 
 
 def start_loop(model: ChatOpenAI, engine: pyttsx3.Engine) -> None:
+    initialized = False
+
+    print(
+        "Starting meditation. When prompted for input, give an empty"
+        ' response or "q" to exit.'
+    )
+
     while True:
-        user_input = input("> ")
-        if not user_input:
-            break
+        if initialized:
+            user_input = input("> ")
+            if user_input in EXIT_TERMS:
+                break
+        else:
+            user_input = "Give a welcome to start the meditation"
+            initialized = True
 
         llm_result = generate(model, user_input)
+        print(llm_result)
         engine.say(llm_result)
         engine.runAndWait()
 
@@ -55,7 +68,7 @@ def main() -> None:
         model=OPENAI_MODEL,
         base_url=OPENAI_API_URL,
         api_key=SecretStr(OPENAI_API_URL),
-        max_tokens=100,
+        max_completion_tokens=100,
     )
     engine = pyttsx3.init()
     engine.setProperty("rate", 140)
