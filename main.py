@@ -27,7 +27,10 @@ def generate(model: ChatOpenAI, user_input: str) -> Content:
     TODO: Chain conversation.
     """
     prompt_template = PromptTemplate.from_template(
-        "Create a calming meditation experience to guide the user through a calm and detailed scene. If it is a story, describe what happens in the story, if not a story then describe observations from the user perspective. Use the following input: {input}"
+        "Create a calming meditation experience to guide the user through a"
+        " calm and detailed scene. If it is a story, describe what happens in"
+        " the story, if not a story then describe observations from the user"
+        " perspective. Use the following input: {input}"
     )
     prompt = prompt_template.format(input=user_input)
     result = model.invoke(prompt)
@@ -35,9 +38,8 @@ def generate(model: ChatOpenAI, user_input: str) -> Content:
     return result.content
 
 
-def start_loop(model: ChatOpenAI, engine: pyttsx3.Engine):
+def start_loop(model: ChatOpenAI, engine: pyttsx3.Engine) -> None:
     while True:
-        # e.g. I walk through a misty forest on a mountain in the evening
         user_input = input("> ")
         if not user_input:
             break
@@ -48,7 +50,9 @@ def start_loop(model: ChatOpenAI, engine: pyttsx3.Engine):
 
 
 def main() -> None:
-    """Main command-line entry-point."""
+    """
+    Main command-line entry-point.
+    """
     model = ChatOpenAI(
         model=OPENAI_MODEL,
         base_url=OPENAI_API_URL,
