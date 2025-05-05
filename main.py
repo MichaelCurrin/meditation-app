@@ -59,6 +59,7 @@ def main() -> None:
         api_key=SecretStr(OPENAI_API_URL),
         max_tokens=100,
     )
+    # TODO: Replace with more realistic audio.
     engine = pyttsx3.init()
     engine.setProperty("rate", 140)
 
