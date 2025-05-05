@@ -6,3 +6,8 @@ Allow configuration from config file or CLI or choosing from styles of prompts.
 Read audio to text?
 
 Replace with more realistic audio.
+allow skipping current line being read out
+
+Add music and images
+
+Compare against my saved prompt
