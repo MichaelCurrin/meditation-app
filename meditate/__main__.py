@@ -5,7 +5,7 @@ Meditation app.
 import os
 from typing import Union
 
-import pyttsx3
+import pyttsx3  # type: ignore
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from pydantic.types import SecretStr
@@ -23,8 +23,6 @@ def generate(model: ChatOpenAI, user_input: str) -> Content:
     """
     Send prompt to LLM and return result.
 
-    TODO: System prompt.
-    TODO: Chain conversation.
     """
     prompt_template = PromptTemplate.from_template(
         "Create a calming meditation experience to guide the user through a"
@@ -59,7 +57,6 @@ def main() -> None:
         api_key=SecretStr(OPENAI_API_URL),
         max_tokens=100,
     )
-    # TODO: Replace with more realistic audio.
     engine = pyttsx3.init()
     engine.setProperty("rate", 140)
 
