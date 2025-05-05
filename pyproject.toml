@@ -1,7 +1,7 @@
 [tool.poetry]
 package-mode = false
 name = "meditation-app"
-version = "0.2.0"
+version = "0.3.0"
 description = "CLI Python interactive meditation app powered by an LLM and text to speech"
 authors = ["Michael Currin <18750745+MichaelCurrin@users.noreply.github.com>"]
 license = "MIT"
