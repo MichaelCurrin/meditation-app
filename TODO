@@ -7,6 +7,9 @@ Replace with more realistic audio.
 Compare against my saved prompt
 
 Consider speech handled in browser with JS instead.
+Consider using this as the base design with UI
+  https://websim.ai/@MichaelPythonDev/tranquil-spaces-meditation-app/
+  And hit local LLM (no backend needed?) or Pollinations (but not reliable)
 
 Features
   Add music and images
