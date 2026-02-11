@@ -9,6 +9,8 @@
 
 Instead of a pre-recorded guided meditation, you can create your own custom one. It is interactive, so the AI gives you a scene and choices and you pick an option, like a text-based adventure video game.
 
+To keep your journey and what your share private, configure the app to use a local LLM like Ollama. See OpenAI-related options [here](https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/artificial-intelligence/llm-api-urls.html). 
+
 ## License
 
 Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).
