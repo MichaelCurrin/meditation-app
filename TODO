@@ -2,7 +2,7 @@ LangChain
   Set System prompt.
   Chain conversation.
 
-Replace with more realistic audio.
+Replace with more realistic audio. I'd like to use something based on https://github.com/MichaelCurrin/kokoro-speech-demo but the output is very slow.
 
 Compare against my saved prompt
 
