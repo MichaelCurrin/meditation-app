@@ -15,7 +15,7 @@ pyttsx3 = "^2.98"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"
-black = "^24.10.0"
+black = "^26.3.1"
 flake8 = "^7.1.1"
 mypy = "^1.13.0"
 
