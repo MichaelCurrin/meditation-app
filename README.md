@@ -16,6 +16,32 @@ To keep your journey and what your share **private**, configure the app to use a
 - The voice is poor quality. It's possible to replace this using Kokoro like in this [demo](https://github.com/MichaelCurrin/kokoro-speech-demo) but this can be slow to be usable. Or use an API service, but that requires signup and subscription costs.
 - The input is text and ideally it can listen to your voice.
 
+## Requirements
+
+- Python
+- Poetry
+- make (on Linux or macOS)
+- [Ollama](https://ollama.com/)
+
+## Installion
+
+```sh
+make install
+```
+
+## Run
+
+```sh
+make run
+```
+
+To disable text-to-speech while keeping text output:
+
+```sh
+make run-silent
+```
+
+
 ## License
 
 Released under [MIT](/LICENSE) by [@MichaelCurrin](https://github.com/MichaelCurrin).

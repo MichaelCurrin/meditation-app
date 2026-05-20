@@ -19,10 +19,17 @@ fmt:
 	poetry run black .
 	poetry run isort .
 
+run: run-llama
 
-run run-llama:
-	OPENAI_MODEL='llama3.2' OPENAI_API_KEY='dummy' OPENAI_API_URL='http://localhost:11434/v1' \
+run-llama:
+	OPENAI_MODEL='gemma3' \
+	OPENAI_API_KEY='dummy' \
+	OPENAI_API_URL='http://localhost:11434/v1' \
 		poetry run python -m meditate
 
+run-silent:
+	ENABLE_TTS='0' $(MAKE) run
+
 run-polli:
-	OPENAI_API_URL='https://text.pollinations.ai/openai' poetry run python -m meditate
+	OPENAI_API_URL='https://text.pollinations.ai/openai' \
+		poetry run python -m meditate
