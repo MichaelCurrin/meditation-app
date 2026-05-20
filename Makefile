@@ -1,5 +1,11 @@
 SHELL = /bin/bash
 
+all: install
+
+h help:
+	@grep '^[a-z]' Makefile
+
+
 install:
 	poetry install
 
