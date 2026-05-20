@@ -13,7 +13,9 @@ To keep your journey and what your share **private**, configure the app to use a
 
 ## Limitations
 
-- The voice is poor quality. It's possible to replace this using Kokoro like in this [demo](https://github.com/MichaelCurrin/kokoro-speech-demo) but this can be slow to be usable. Or use an API service, but that requires signup and subscription costs.
+- When using `pyttsx3` the voice is poor quality.
+- When using Kokoro like in this [demo](https://github.com/MichaelCurrin/kokoro-speech-demo) it can be so slow it is usuable (depending on your machine specs).
+- Or use an API service, but that requires signup and subscription costs.
 - The input is text and ideally it can listen to your voice.
 
 ## Requirements
@@ -32,13 +34,19 @@ make install
 ## Run
 
 ```sh
-make run
+make run-llama
+```
+
+With enhanced audio:
+
+```sh
+make run-llama-kokoro
 ```
 
 To disable text-to-speech while keeping text output:
 
 ```sh
-make run-silent
+make run-llama-silent
 ```
 
 
